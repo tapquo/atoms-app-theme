@@ -1,0 +1,23 @@
+[data-atoms="app"]
+
+  CIRCLE_BORDER = 1px solid FORM_COLOR
+  CIRCLE_BACKGROUND = lighten(FORM_COLOR, 95%)
+
+  input[type=checkbox]
+    border: 1px solid FORM_COLOR
+    border-radius: RADIUS = 1rem
+    background-color: lighten(FORM_COLOR, 30%)
+    transition all 300ms 150ms
+
+    &:after
+      background-color: CIRCLE_BACKGROUND
+      border: CIRCLE_BORDER
+      border-radius: RADIUS
+      transition left 150ms
+
+    &:checked
+      COLOR = THEME
+      border-color: darken(THEME, 10%)
+      background-color: THEME
+      &:after
+        border-color: SUCCESS
