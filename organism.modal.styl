@@ -16,6 +16,12 @@
         vendor(animation-direction, reverse)
         vendor(animation-fill-mode, forwards)
 
+    & > [data-organism=loading]
+      SPEED = ANIMATION_DURATION * 1.4
+      &::before
+        animation modal-loading SPEED 0 infinite
+      &::after
+        animation modal-loading SPEED (SPEED / 2) infinite
 
   & > :not([data-organism=loading])
       background: BACKGROUND
@@ -32,12 +38,6 @@
     &::before, &::after
       background-color: WHITE
       border-radius: 50%
-    &.show
-      SPEED = ANIMATION_DURATION * 1.4
-      &::before
-        animation modal-loading SPEED 0 steps(ANIMATION_STEPS) infinite
-      &::after
-        animation modal-loading SPEED (SPEED / 2) steps(ANIMATION_STEPS) infinite
 
 
 @keyframes modal-show

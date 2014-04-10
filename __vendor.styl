@@ -1,5 +1,5 @@
 vendor(prop, args)
-  for vendor in webkit moz ms o
+  for vendor in webkit moz ms
     -{vendor}-{prop} args
   {prop} args
 
@@ -13,7 +13,7 @@ vendorValue(prop, args)
 vendorNoMS(prop, args)
   for vendor in webkit moz o
     -{vendor}-{prop} args
-  {prop} args 
+  {prop} args
 
 vendorValueNoMS(prop, args)
   {prop} -webkit- + args
@@ -38,7 +38,7 @@ backface-visibility()
   vendor('backface-visibility', arguments)
 
 perspective()
-  vendor('perspective', arguments)  
+  vendor('perspective', arguments)
 
 /* ==================== ANIMATION =================== */
 animation()
@@ -102,7 +102,7 @@ box-orient()
   else if arguments is vertical
     -ms-flex-direction column
 
- 
+
 box-direction()
   vendorNoMS('box-direction', arguments)
   -ms-flex-direction arguments
@@ -162,7 +162,7 @@ transform-origin()
   vendor('transform-origin', arguments)
 
 transform-style()
-  vendor('transform-style', arguments)  
+  vendor('transform-style', arguments)
 
 /* ====================== COLUMNS ====================== */
 columns()
