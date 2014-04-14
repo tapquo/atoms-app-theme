@@ -1,6 +1,12 @@
 header
   [data-atoms="app"] > article &, [data-atoms="app"] > aside &
-    & h1
+    & [data-atom=heading]
       color: WHITE
       font-size: 1.15rem
-      font-weight: 300 !important
+      font-weight: 400
+
+  [data-atoms=app].standalone > article &
+    border-color: THEME
+
+  [data-atoms=app].standalone > aside &
+    border-color: darken(DARK, 10%)
