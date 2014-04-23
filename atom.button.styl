@@ -2,24 +2,23 @@ button
   cursor: pointer
 
   [data-atoms="app"] section &
-    border-radius: BORDER_RADIUS
+    border-radius: (BORDER_RADIUS * 2)
     background-color: BUTTON
-    color: #999
+    color: darken(BUTTON, 50%)
 
-    & > abbr
-      // text-transform: uppercase
-      font-weight: 300
+    &, & > abbr
+      font-weight: FONT_WEIGHT_NORMAL
 
     &:not([disabled])
-      box-shadow 0em -0.185rem 0em rgba(0, 0, 0, 0.1) inset
+      box-shadow 0 -0.125rem rgba(0,0,0, 0.1) inset
       transition: opacity 0.25s ease, background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease
 
       &:hover
         background-color: darken(BUTTON, 20%)
-        color: #fff
+        color: WHITE
       &:active
         background-color: darken(BUTTON, 40%)
-        box-shadow 0px 0px 0px 1px rgba(0, 0, 0, 0.1) inset
+        box-shadow inset 0 0.125rem 0 rgba(0,0,0, 0.1) inset
 
       &.accept
         background-color: ACCEPT

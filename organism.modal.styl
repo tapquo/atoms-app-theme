@@ -2,7 +2,7 @@
   visibility: hidden
   &.active
     visibility: visible
-    background-color: rgba(0,0,0,0.5)
+    background-color: rgba(0,0,0,0.75)
     & > [data-organism]
       backface-visibility hidden
       vendor(animation-duration, ANIMATION_DURATION)
@@ -24,13 +24,20 @@
         animation modal-loading SPEED (SPEED / 2) infinite
 
   & > :not([data-organism=loading])
-      background: BACKGROUND
-      & > header
-        color: darken(BACKGROUND, 60%)
-      & > section
-        color: darken(BACKGROUND, 40%)
-      & > footer
-        background: lighten(BACKGROUND, 25%)
+    &.accept > header
+      background-color: ACCEPT
+    &.cancel > header
+      background-color: CANCEL
+    &.warning > header
+      background-color: WARNING
+    &:not(.accept):not(.cancel):not(.warning) > header
+      background-color: THEME
+
+    & > header
+      color: WHITE
+    & > section, & > footer
+      background-color: WHITE
+      color: COLOR
 
   & > [data-organism=loading]
     background: darken(DARK, 50%)

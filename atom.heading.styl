@@ -1,9 +1,19 @@
 [data-atoms=app]
+  article, aside
+    header > [data-atom=heading]
+      font-size: FONT_SIZE_BIG
+      font-weight: FONT_WEIGHT_NORMAL
+      color: WHITE
+
   section >
+    [data-atom=heading]
+      font-weight: FONT_WEIGHT_THIN
     h1
       font-size: 1.5rem
+      font-weight: FONT_WEIGHT_BOLD !important
     h2
       font-size: 1.3rem
+      font-weight: FONT_WEIGHT_BOLD !important
     h3
       font-size: 1.1rem
     h4

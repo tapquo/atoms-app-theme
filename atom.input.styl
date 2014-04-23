@@ -2,12 +2,18 @@
 
   input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], select, textarea, label.select
     font-family: "Helvetica Neue", "Helvetica", Arial
+    font-size: FONT_SIZE_NORMAL
+    font-weight: FONT_WEIGHT_BOLD
     background-color: WHITE
     border: 1px solid FORM_COLOR
     border-radius: BORDER_RADIUS
 
     color: DARK
-    transition background-color 0.3s ease-out, box-shadow 0.2s ease, border-color 0.2s ease
+    transition background-color ANIMATION_DURATION ANIMATION_EASE
+
+    &:focus
+      border-color: THEME
+      background-color: WHITE
 
     &.error, &.required
       color: darken(CANCEL, 5%)
@@ -20,12 +26,20 @@
       &:-ms-input-placeholder
         color: lighten(CANCEL, 40%)
 
+    &[disabled]
+      background-color: darken(BACKGROUND, 5%)
+      border-color: darken(BACKGROUND, 10%)
+      color: darken(FORM_COLOR, 25%)
+
     &::-webkit-input-placeholder
       color: FORM_COLOR
+      font-weight: FONT_WEIGHT_THIN
     &::-moz-placeholder
       color: FORM_COLOR
+      font-weight: FONT_WEIGHT_THIN
     &::-ms-input-placeholder
       color: FORM_COLOR
+      font-weight: FONT_WEIGHT_THIN
 
 
   CIRCLE_BORDER = 1px solid FORM_COLOR
