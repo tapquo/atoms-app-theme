@@ -1,14 +1,19 @@
 [data-atoms="app"]
+
+  > article > [data-molecule="navigation"]
+    background-color: darken(DARK, 25%)
+    > button.active
+      box-shadow: inset 0 -.25rem THEME
+
   > article > header [data-molecule="navigation"] button
     color: lighten(THEME, 75%)
+    &:active
+      color: WHITE !important
 
-  > aside > section [data-molecule="navigation"]
-    & [data-atom="link"]
-      font-weight: normal
-      &:not(.active)
-        color: lighten(DARK, 50%)
-      &.active
-        color: WHITE
+  > aside > header [data-molecule="navigation"] button
+    color: lighten(DARK, 75%)
+    &:active
+      color: WHITE !important
 
   > article > section [data-molecule="navigation"] > [data-atom="button"]
       &:not(:first-child):not(:last-child)
@@ -20,24 +25,18 @@
       &:last-child
         border-radius: 0 BORDER_RADIUS BORDER_RADIUS 0
 
-  > article > [data-molecule="navigation"]
-    background-color: darken(DARK, 25%)
-    background-color: DARK
-    > button.active
-      box-shadow: inset 0 -.25rem THEME
-
-  > aside > header [data-molecule="navigation"] button
-    color: lighten(DARK, 75%)
-
-  > article > header [data-molecule="navigation"] button
-    &:hover, &:active, &.active
-        color: WHITE !important
+  > aside > section [data-molecule="navigation"]
+    & [data-atom="link"]
+      font-weight: normal
+      &:not(.active)
+        color: lighten(DARK, 50%)
+      &.active
+        color: WHITE
 
   > article > footer [data-molecule="navigation"] button, > article > [data-molecule="navigation"] button
     color: lighten(DARK, 35%)
-    &:active, &:hover, &.active
+    &:active, &.active
       color: WHITE
-
 
   > article > footer [data-molecule="navigation"] button
     text-shadow: 0 .1rem darken(DARK, 12.5%)
@@ -46,3 +45,12 @@
 
   > [data-system=modal] > article > footer > nav > button:not(:last-child)
     border-bottom: solid 1px darken(BACKGROUND, 5%)
+
+@media screen and (min-width: 1024px)
+  [data-atoms="app"]
+    > article > header [data-molecule="navigation"] button:hover
+      color: WHITE !important
+
+    > article > footer [data-molecule="navigation"] button, > article > [data-molecule="navigation"] button
+      &:hover
+        color: WHITE
