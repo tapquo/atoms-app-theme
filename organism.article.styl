@@ -1,18 +1,17 @@
 [data-atoms="app"] > article
-  position: absolute
   transform-origin: 100% 100%
 
+  vendor(animation-fill-mode, forwards)
   vendor(animation-duration, ANIMATION_DURATION)
   vendor(animation-timing-function, ANIMATION_EASE)
   &.active
     &.aside
       left: ASIDE_WIDTH
-
     &[data-state="in"]
       z-index: 2
       vendor(animation-name, article-in)
       &:only-of-type
-        vendor(animation-duration, 0s)
+        vendor(animation-duration, 1ms)
     &[data-state="out"]
       z-index: 2
       vendor(animation-name, article-in)
@@ -38,15 +37,13 @@
   header
     background-color: THEME
 
-  section
-    background-color: BACKGROUND
-
   footer
     background: DARK
 
 
-TRANSLATE = 105%
-OPACITY   = 0.5
+TRANSLATE = 100%
+OPACITY   = 0.75
+DEGREES   = -15deg
 
 @keyframes article-in
   0%
@@ -59,21 +56,8 @@ OPACITY   = 0.5
     transform: translateX(0)
   100%
     transform: translateX(-(TRANSLATE/5))
+    // transform: rotateY(DEGREES)
     opacity: OPACITY
-
-// DEGREES   = -15deg
-// @keyframes article-page-in
-//   0%
-//     transform: translateX(TRANSLATE)
-//   100%
-//     transform: translateX(0)
-
-// @keyframes article-page-out
-//   0%
-//     transform: translateZ(0)
-//   100%
-//     transform: rotateY(DEGREES)
-//     opacity: OPACITY
 
 @keyframes article-aside
   0%
