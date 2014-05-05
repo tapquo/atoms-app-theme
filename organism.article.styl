@@ -1,5 +1,5 @@
 [data-atoms="app"] > article
-  transform-origin: 100% 100%
+  transform-origin: 50% 100%
 
   vendor(animation-fill-mode, forwards)
   vendor(animation-duration, ANIMATION_DURATION)
@@ -9,23 +9,35 @@
       left: ASIDE_WIDTH
     &[data-state="in"]
       z-index: 2
-      vendor(animation-name, article-in)
+      &:not(.cover)
+        vendor(animation-name, article-in)
+      &.cover
+        vendor(animation-name, article-in-cover)
       &:only-of-type
         vendor(animation-duration, 1ms)
     &[data-state="out"]
       z-index: 2
-      vendor(animation-name, article-in)
       vendor(animation-direction, reverse)
       vendor(animation-fill-mode, forwards)
+      &:not(.cover)
+        vendor(animation-name, article-in)
+      &.cover
+        vendor(animation-name, article-in-cover)
     &[data-state="back-in"]
       z-index: 1
-      vendor(animation-name, article-out)
+      &:not(.cover)
+        vendor(animation-name, article-out)
+      &.cover
+        vendor(animation-name, article-out-cover)
     &[data-state="back-out"]
       z-index: 1
       vendor(animation-delay, 1)
-      vendor(animation-name, article-out)
       vendor(animation-direction, reverse)
       vendor(animation-fill-mode, forwards)
+      &:not(.cover)
+        vendor(animation-name, article-out)
+      &.cover
+        vendor(animation-name, article-out-cover)
     &[data-state="aside-show"]
       vendor(animation-name, article-aside)
       vendor(animation-fill-mode, forwards)
@@ -43,7 +55,7 @@
 
 TRANSLATE = 100%
 OPACITY   = 0.75
-DEGREES   = -15deg
+SCALE     = 0.9
 
 @keyframes article-in
   0%
@@ -56,7 +68,19 @@ DEGREES   = -15deg
     transform: translateX(0)
   100%
     transform: translateX(-(TRANSLATE/5))
-    // transform: rotateY(DEGREES)
+    opacity: OPACITY
+
+@keyframes article-in-cover
+  0%
+    transform: translateY(TRANSLATE)
+  100%
+    transform: translateY(0)
+
+@keyframes article-out-cover
+  0%
+    transform: translateY(0)
+  100%
+    transform: translateY(-(TRANSLATE/10))
     opacity: OPACITY
 
 @keyframes article-aside
