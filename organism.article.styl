@@ -22,6 +22,7 @@
       &:not(.cover)
         vendor(animation-name, article-in)
       &.cover
+        vendor(animation-delay, ANIMATION_DURATION)
         vendor(animation-name, article-in-cover)
     &[data-state="back-in"]
       z-index: 1
@@ -38,6 +39,7 @@
         vendor(animation-name, article-out)
       &.cover
         vendor(animation-name, article-out-cover)
+
     &[data-state="aside-show"]
       vendor(animation-name, article-aside)
       vendor(animation-fill-mode, forwards)
