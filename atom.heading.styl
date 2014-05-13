@@ -1,11 +1,14 @@
 [data-atoms=app]
   article, aside
-    header > [data-atom=heading]
-      font-size: 1.1rem
-      font-weight: FONT_WEIGHT_NORMAL
-      color: WHITE
+  [data-organism=header] > [data-atom=heading]
+    font-size: 1.1rem
+    font-weight: FONT_WEIGHT_NORMAL
+    color: WHITE
+    & + [data-atom=heading]
+      font-weight: FONT_WEIGHT_THIN
+      opacity: 0.75
 
-  section >
+  [data-organism=section] >
     h1
       font-size: (FONT_SIZE_BIG * 1.1)
       font-weight: FONT_WEIGHT_BOLD
