@@ -1,7 +1,7 @@
 [data-system=modal]
-  visibility: hidden
+  &:not(.active)
+    display: none
   &.active
-    visibility: visible
     background-color: rgba(0,0,0,0.75)
     & > [data-organism]
       backface-visibility hidden
