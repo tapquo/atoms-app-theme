@@ -42,12 +42,13 @@ button
       & > abbr, & .icon
         opacity: 0.35
 
-  [data-atoms=app]  &
-    > small
-      font-weight: 700
-      border-radius: .25rem
-      color: WHITE
-      background-color: THEME
+  [data-atoms=app] & > small
+    font-weight: bold
+    border-radius: .25rem
+    color: WHITE
+    background-color: THEME
+  [data-atoms=app] header & > small
+    background-color: DARK
 
 
 @media screen and (min-width: 1024px)
