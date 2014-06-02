@@ -1,3 +1,21 @@
 section
   [data-atoms="app"] article > &
     background-color: BACKGROUND
+    &.active
+      &[data-state=pulling], &[data-state=pull]
+        &:before
+          content: "\f103"
+          font-family:"Ionicons"
+          font-size: 3rem
+          color: darken(BACKGROUND, 25%)
+          transform-origin 50% 50%
+          transition-property transform
+          transition-duration (ANIMATION_DURATION / 2)
+      &[data-state=pulling]:before
+        transform rotateZ(0deg)
+      &[data-state=pull]:before
+        transform rotateZ(180deg)
+      &.loading
+        &[data-state=pull]:before
+          content: "\f29d" !important
+          animation loading-spin 2s infinite linear
