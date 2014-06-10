@@ -1,5 +1,5 @@
 vendor(prop, args)
-  for vendor in webkit moz ms o
+  for vendor in webkit moz ms
     -{vendor}-{prop} args
   {prop} args
 
@@ -7,18 +7,16 @@ vendorValue(prop, args)
   {prop} -webkit- + args
   {prop} -moz- + args
   {prop} -ms- + args
-  {prop} -o- + args
   {prop} args
 
 vendorNoMS(prop, args)
-  for vendor in webkit moz o
+  for vendor in webkit moz
     -{vendor}-{prop} args
   {prop} args
 
 vendorValueNoMS(prop, args)
   {prop} -webkit- + args
   {prop} -moz- + args
-  {prop} -o- + args
   {prop} args
 
 
