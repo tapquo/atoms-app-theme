@@ -1,10 +1,25 @@
 [data-atoms="app"]
 
   > article > [data-molecule="navigation"]
-    background-color: darken(DARK, 25%)
+    background-color: THEME
     transition margin-top (ANIMATION_DURATION / 3)
-    > button.active
-      box-shadow: inset 0 -.25rem THEME
+    > button
+      COLOR = lighten(THEME, 95%)
+      > abbr
+        color: COLOR
+      border-top: BORDER = solid 1px WHITE
+      border-bottom: BORDER
+      border-left: BORDER
+      &:first-child
+        border-radius: .5rem 0 0 .5rem
+      &:last-child
+        border-radius: 0 .5rem .5rem 0
+        border-right: BORDER
+      &.active
+        background-color: COLOR
+        > abbr
+          color: THEME
+
 
   > article > header [data-molecule="navigation"] button
     color: lighten(THEME, 75%)
