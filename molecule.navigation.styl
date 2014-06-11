@@ -1,6 +1,6 @@
 [data-atoms="app"]
 
-  > article > [data-molecule="navigation"]
+  > article > [data-molecule=navigation]
     background-color: THEME
     transition margin-top (ANIMATION_DURATION / 3)
     > button
@@ -21,17 +21,17 @@
           color: THEME
 
 
-  > article > header [data-molecule="navigation"] button
+  > article > header [data-molecule=navigation] button
     color: lighten(THEME, 75%)
     &:active
       color: WHITE !important
 
-  > aside > header [data-molecule="navigation"] button
+  > aside > header [data-molecule=navigation] button
     color: lighten(DARK, 75%)
     &:active
       color: WHITE !important
 
-  > article > section [data-molecule="navigation"] > [data-atom="button"]
+  > article > section [data-molecule=navigation] > [data-atom="button"]
       &:not(:first-child):not(:last-child)
         border-radius: 0
       &:not(:first-child)
@@ -41,20 +41,12 @@
       &:last-child
         border-radius: 0 BORDER_RADIUS BORDER_RADIUS 0
 
-  > aside > section [data-molecule="navigation"]
-    & [data-atom="link"]
-      font-weight: normal
-      &:not(.active)
-        color: lighten(DARK, 50%)
-      &.active
-        color: WHITE
-
-  > article > footer [data-molecule="navigation"] button, > article > [data-molecule="navigation"] button
+  > article > footer [data-molecule=navigation] button, > article > [data-molecule=navigation] button
     color: lighten(DARK, 35%)
     &:active, &.active
       color: WHITE
 
-  > article > footer [data-molecule="navigation"] button
+  > article > footer [data-molecule=navigation] button
     &.active
       background-color: darken(DARK, 25%)
 
@@ -63,9 +55,9 @@
 
 @media screen and (min-width: 1024px)
   [data-atoms="app"]
-    > article > header [data-molecule="navigation"] button:hover
+    > article > header [data-molecule=navigation] button:hover
       color: WHITE !important
 
-    > article > footer [data-molecule="navigation"] button, > article > [data-molecule="navigation"] button
+    > article > footer [data-molecule=navigation] button, > article > [data-molecule=navigation] button
       &:hover
         color: WHITE
