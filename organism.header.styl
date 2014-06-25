@@ -4,7 +4,7 @@
     transition margin-top (ANIMATION_DURATION / 3)
 
   &.standalone
-    > article > header
-      border-color: THEME
-    > aside > header
-      border-color: darken(DARK, 10%)
+    > [data-organism=article] > [data-organism=header]
+      border-top-color: THEME
+    > [data-organism=aside] > [data-organism=header]
+      border-top-color: darken(DARK, 10%)

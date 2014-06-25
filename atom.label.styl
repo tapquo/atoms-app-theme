@@ -1,11 +1,10 @@
-label
-  font-weight: FONT_WEIGHT_THIN
+[data-atoms=app]
+  [data-atom=label]
+    font-weight: FONT_WEIGHT_THIN
+    &.tag
+      background: #E8E8E8
+      border-radius BORDER_RADIUS
+      color: rgba(0, 0, 0, 0.6)
 
-  [data-atoms="app"] fieldset &, [data-atoms="app"] form &
+  [data-organism=section] [data-atom=label]
     color: darken(FORM_COLOR, 65%)
-
-  [data-atoms="app"] &.tag
-    background: #E8E8E8
-    border-radius BORDER_RADIUS
-    color: rgba(0, 0, 0, 0.6)
-

@@ -1,5 +1,4 @@
-[data-atoms="app"]
-
+[data-atoms=app]
   input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], select, textarea, label.select
     font-family: "Helvetica Neue", "Helvetica", Arial
     font-size: FONT_SIZE_NORMAL
@@ -41,7 +40,6 @@
       color: FORM_COLOR
       font-weight: FONT_WEIGHT_THIN
 
-
   input[type=range]
     background-color: FORM_COLOR
     border-radius: (BORDER_RADIUS / 2)
@@ -51,18 +49,6 @@
       border-radius: 50%
       background-color: lighten(FORM_COLOR, 95%)
       border: 1px solid FORM_COLOR
-
-
-  datalist
-    border-radius: BORDER_RADIUS
-    border: 1px solid FORM_COLOR
-    background-color: WHITE
-    > *
-      &:not(:last-child)
-        border-bottom: solid 1px lighten(FORM_COLOR, 50%)
-      &:active, &:hover
-        background-color: THEME
-        color: WHITE
 
 
 @media screen and (min-width: 1024px)
