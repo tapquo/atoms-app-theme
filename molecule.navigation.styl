@@ -1,28 +1,19 @@
-[data-atoms="app"]
+[data-atoms=app]
 
   > article > [data-molecule=navigation]
     background-color: THEME
     transition margin-top (ANIMATION_DURATION / 3)
     > button
-      COLOR = lighten(THEME, 95%)
       > abbr
-        color: COLOR
-      border-top: BORDER = solid 1px WHITE
-      border-bottom: BORDER
-      border-left: BORDER
-      &:first-child
-        border-radius: .5rem 0 0 .5rem
-      &:last-child
-        border-radius: 0 .5rem .5rem 0
-        border-right: BORDER
+        color: lighten(THEME, 75%)
+        font-weight: FONT_WEIGHT_NORMAL
       &.active
-        background-color: COLOR
+        box-shadow: inset 0 -.2rem WHITE
         > abbr
-          color: THEME
-
+          color: lighten(THEME, 100%)
 
   > article > header [data-molecule=navigation] button
-    color: lighten(THEME, 75%)
+    color: lighten(THEME, 50%)
     &:active
       color: WHITE !important
 
@@ -50,11 +41,16 @@
     &.active
       background-color: darken(DARK, 25%)
 
-  > [data-system=modal] > article > footer > nav > button:not(:last-child)
-    border-bottom: solid 1px darken(BACKGROUND, 5%)
+  > [data-system=modal] > article > footer
+    > nav > button
+      font-weight: FONT_WEIGHT_NORMAL
+      text-transform: uppercase
+
+      &.default
+        color: THEME
 
 @media screen and (min-width: 1024px)
-  [data-atoms="app"]
+  [data-atoms=app]
     > article > header [data-molecule=navigation] button:hover
       color: WHITE !important
 
