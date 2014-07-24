@@ -41,13 +41,19 @@
     &.active
       background-color: darken(DARK, 25%)
 
-  > [data-system=modal] > article > footer
-    > nav > button
+  > [data-system=modal] > article
+    > footer > nav > button
       font-weight: FONT_WEIGHT_NORMAL
       text-transform: uppercase
-
       &.default
         color: THEME
+
+    &.accept > footer > nav > button.default
+      color: ACCEPT
+    &.cancel > footer > nav > button.default
+      color: CANCEL
+    &.warning > footer > nav > button.default
+      color: WARNING
 
 @media screen and (min-width: 1024px)
   [data-atoms=app]

@@ -25,15 +25,20 @@
     background-color: lighten(BACKGROUND, 2.5%)
     color: darken(BACKGROUND, 75%)
 
-    &.accept > header
-      background-color: ACCEPT
-    &.cancel > header
-      background-color: CANCEL
-    &.warning > header
-      background-color: WARNING
+    &.accept
+      > header
+        background-color: ACCEPT
+    &.cancel
+      > header
+        background-color: CANCEL
+    &.warning
+      > header
+        background-color: WARNING
+
     &.accept, &.cancel, &.warning
       > header
         color: WHITE
+
     > footer
       background-color: darken(BACKGROUND, 2.5%)
       border-top: solid 1px darken(BACKGROUND, 5%)
