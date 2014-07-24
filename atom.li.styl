@@ -1,5 +1,11 @@
 [data-atoms=app]
   [data-atom=li]
+
+    &.destroy
+      vendor(animation-name, li-destroy)
+      vendor(animation-fill-mode, forwards)
+      vendor(animation-duration, ANIMATION_DURATION)
+
     > figure
       background-color: darken(BACKGROUND, 5%)
       color: WHITE
@@ -42,3 +48,13 @@
       color: lighten(DARK, 85%)
     &.anchor
       color: lighten(DARK, 42.5%)
+
+
+@keyframes li-destroy
+  75%
+    height: inherit !important
+    padding: inherit !important
+    right: 100%
+  100%
+    height: 0px
+    padding: 0
