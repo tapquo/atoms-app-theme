@@ -1,5 +1,5 @@
 [data-atoms=app]
-  input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], select, textarea, label.select
+  [data-atom-input]:not([type=range]):not([data-atom-input=autocomplete]), [data-atom-input=autocomplete] > input, [data-atom-select], [data-atom-textarea]
     font-family: FONT_FAMILY
     font-size: FONT_SIZE_NORMAL
     font-weight: FONT_WEIGHT_NORMAL
@@ -39,7 +39,7 @@
       color: FORM_COLOR
       font-weight: FONT_WEIGHT_THIN
 
-  input[type=range]
+  [data-atom-input][type=range]
     background-color: FORM_COLOR
     border-radius: (BORDER_RADIUS / 2)
     &::-webkit-slider-thumb

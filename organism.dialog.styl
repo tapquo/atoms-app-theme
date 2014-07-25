@@ -3,7 +3,7 @@
     display: none
   &.active
     background-color: rgba(0,0,0,0.75)
-    & > [data-organism]
+    & > [data-organism-dialog]
       vendor(animation-duration, ANIMATION_DURATION)
       vendor(animation-timing-function, ANIMATION_EASE)
       &.show
@@ -14,14 +14,14 @@
         vendor(animation-direction, reverse)
         vendor(animation-fill-mode, forwards)
 
-    & > [data-extend=loading]
+    & > [data-organism-dialog=loading]
       SPEED = ANIMATION_DURATION * 1.4
       &::before
         animation dialog-loading SPEED 0 infinite
       &::after
         animation dialog-loading SPEED (SPEED / 2) infinite
 
-  & > :not([data-extend=loading])
+  & > :not([data-organism-dialog=loading])
     background-color: lighten(BACKGROUND, 2.5%)
     color: darken(BACKGROUND, 75%)
 
@@ -39,11 +39,11 @@
       > header
         color: WHITE
 
-    > footer
+    > [data-organism-footer]
       background-color: darken(BACKGROUND, 2.5%)
       border-top: solid 1px darken(BACKGROUND, 5%)
 
-  & > [data-extend=loading]
+  & > [data-organism-dialog=loading]
     background: darken(DARK, 50%)
     border-radius: 1rem
     &::before, &::after

@@ -1,15 +1,15 @@
-[data-atoms="app"] > [data-organism=article]
+[data-atoms="app"] > [data-organism-article]
   vendor(animation-fill-mode, forwards)
   vendor(animation-duration, ANIMATION_DURATION)
   vendor(animation-timing-function, ANIMATION_EASE)
 
-  > [data-organism=header] > *
+  > [data-organism-header] > *
     transition opacity (ANIMATION_DURATION * 2) ANIMATION_EASE
     opacity: 0
 
   &.active
     background-color: darken(BACKGROUND, 5%)
-    > [data-organism=header] > *
+    > [data-organism-header] > *
       opacity: 1
 
     &.aside

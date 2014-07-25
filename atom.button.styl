@@ -1,7 +1,7 @@
-button
+[data-atom-button]
   cursor: pointer
 
-  [data-atoms=app] [data-organism=header] &
+  [data-atoms=app] [data-organism-header] &
     > abbr
       font-weight: FONT_WEIGHT_NORMAL
 
@@ -59,7 +59,7 @@ button
 
 
 @media screen and (min-width: 1024px)
-  [data-atoms="app"] section button&:not([disabled])
+  [data-atoms=app] [data-organism-section] [data-atom-button]:not([disabled])
     PERCENT = 15%
     &:not(.accept):not(.cancel):not(.warning):hover
       background-color: darken(BUTTON, PERCENT)

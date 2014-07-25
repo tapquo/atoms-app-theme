@@ -1,6 +1,6 @@
 [data-atoms=app]
-  [data-molecule=div][data-extend=tags]
-    > [data-atom=label]
+  [data-molecule-div=tags]
+    > [data-atom-label]
       font-weight: FONT_WEIGHT_BOLD
       text-transform: lowercase
       border-radius: FONT_SIZE_TINY
@@ -20,7 +20,7 @@
 
 
 @media screen and (min-width: 1024px)
-  [data-atoms=app] [data-molecule=div][data-extend=tags] > [data-atom=label]
+  [data-atoms=app] [data-molecule-div=tags] > [data-atom-label]
     &:hover
       box-shadow inset 0 0 0 2rem rgba(0,0,0,0.15)
       cursor: pointer

@@ -1,6 +1,5 @@
 [data-atoms=app]
-  [data-atom=li]
-
+  [data-atom-li]
     &.destroy
       vendor(animation-name, li-destroy)
       vendor(animation-fill-mode, forwards)
@@ -16,8 +15,8 @@
     span, small
       font-weight: FONT_WEIGHT_THIN
 
-  [data-organism=article] > [data-organism=section]
-    [data-atom=li]
+  [data-organism-article] > [data-organism-section]
+    [data-atom-li]
       background-color: WHITE
       &.anchor
         color: darken(BACKGROUND, 20%)
@@ -28,11 +27,11 @@
         > span, > small
           color: darken(BACKGROUND, 40%)
 
-    &:not(.padding) [data-atom=li]
+    &:not(.padding) [data-atom-li]
       &:not(.anchor)
         border-bottom: DIVIDER
 
-    &.padding [data-atom=li]
+    &.padding [data-atom-li]
       &.anchor
         background-color: transparent
       &:not(.anchor)
@@ -42,7 +41,7 @@
     &.no-divider
       border-bottom: none
 
-  [data-organism=aside] > [data-organism=section] [data-atom=li]
+  [data-organism-aside] > [data-organism-section] [data-atom-li]
     border-bottom: solid 1px lighten(DARK, 5%)
     &:not(.anchor)
       color: lighten(DARK, 85%)
