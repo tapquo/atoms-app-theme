@@ -41,18 +41,17 @@
     &.active
       background-color: darken(DARK, 25%)
 
-  > [data-system=dialog] > [data-organism-article]
-    > [data-organism-footer] > nav > [data-atom-button]
+  > [data-system=dialog] [data-organism-dialog]
+    > [data-organism-footer] [data-atom-button]
       font-weight: FONT_WEIGHT_NORMAL
       text-transform: uppercase
       &.default
         color: THEME
-
-    &.accept > [data-organism-footer] > nav > [data-atom-button].default
+    &.accept > [data-organism-footer] [data-atom-button].default
       color: ACCEPT
-    &.cancel > [data-organism-footer] > nav > [data-atom-button].default
+    &.cancel > [data-organism-footer] [data-atom-button].default
       color: CANCEL
-    &.warning > [data-organism-footer] > nav > [data-atom-button].default
+    &.warning > [data-organism-footer] [data-atom-button].default
       color: WARNING
 
 @media screen and (min-width: 1024px)
