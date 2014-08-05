@@ -61,12 +61,15 @@
 @media screen and (min-width: 1024px)
   [data-atoms=app] [data-organism-section] [data-atom-button]:not([disabled])
     PERCENT = 15%
-    &:not(.accept):not(.cancel):not(.warning):hover
-      background-color: darken(BUTTON, PERCENT)
+    &:not(.accept):not(.cancel):not(.warning):not(.theme):hover
+      background-color: lighten(BUTTON, PERCENT)
       color: WHITE
     &.accept:hover
-      background-color: darken(ACCEPT, PERCENT)
+      background-color: lighten(ACCEPT, PERCENT)
     &.cancel:hover
-      background-color: darken(CANCEL, PERCENT)
+      background-color: lighten(CANCEL, PERCENT)
     &.warning:hover
-      background-color: darken(WARNING, PERCENT)
+      background-color: lighten(WARNING, PERCENT)
+    &.theme:hover
+      background-color: lighten(THEME, PERCENT)
+
