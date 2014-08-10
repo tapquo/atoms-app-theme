@@ -30,18 +30,19 @@
     color: darken(BACKGROUND, 75%)
 
     &.accept
-      > header
+      > [data-organism-header]
         background-color: ACCEPT
     &.cancel
-      > header
+      > [data-organism-header]
         background-color: CANCEL
     &.warning
-      > header
+      > [data-organism-header]
         background-color: WARNING
 
     &.accept, &.cancel, &.warning
-      > header
-        color: WHITE
+      > [data-organism-header]
+        &, [data-atom-button], [data-atom-link]
+          color: WHITE
 
     > [data-organism-footer]
       background-color: darken(BACKGROUND, 2.5%)
