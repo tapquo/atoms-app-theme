@@ -11,12 +11,28 @@
       vendor(animation-duration, ANIMATION_DURATION)
       vendor(animation-timing-function, ANIMATION_EASE)
       &.show
-        vendor(animation-name, dialog-show)
         vendor(animation-direction, normal)
       &.hide
-        vendor(animation-name, dialog-show)
         vendor(animation-direction, reverse)
         vendor(animation-fill-mode, forwards)
+
+      &:not(.side)
+        &.show
+          vendor(animation-name, dialog-show)
+        &.hide
+          vendor(animation-name, dialog-show)
+
+      &.side
+        &:not(.right)
+          &.show
+            vendor(animation-name, dialog-show-side-left)
+          &.hide
+            vendor(animation-name, dialog-show-side-left)
+        &.right
+          &.show
+            vendor(animation-name, dialog-show-side-right)
+          &.hide
+            vendor(animation-name, dialog-show-side-right)
 
     > [data-organism-dialog=loading]
       SPEED = ANIMATION_DURATION * 1.4
@@ -27,7 +43,9 @@
 
   > :not([data-organism-dialog=loading]):not([data-organism-dialog=push])
     background-color: lighten(BACKGROUND, 2.5%)
-    color: darken(BACKGROUND, 75%)
+
+    &, [data-atom-button], [data-atom-link]
+      color: darken(BACKGROUND, 75%)
 
     &.accept
       > [data-organism-header]
@@ -76,6 +94,26 @@
     transform: translateY(2%)
   100%
     transform: translateY(0)
+
+@keyframes dialog-show-side-left
+  0%
+    transform: translateX(-500%)
+  60%
+    transform: translateX(7%)
+  80%
+    transform: translateX(-2%)
+  100%
+    transform: translateX(0)
+
+@keyframes dialog-show-side-right
+  0%
+    transform: translateX(500%)
+  60%
+    transform: translateX(-7%)
+  80%
+    transform: translateX(2%)
+  100%
+    transform: translateX(0)
 
 @keyframes dialog-loading
   0%
