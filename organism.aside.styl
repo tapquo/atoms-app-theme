@@ -1,4 +1,4 @@
-[data-atoms="app"] > aside
+[data-atoms=app] > aside
   background: DARK
   width: ASIDE_WIDTH
 
@@ -23,16 +23,20 @@
   & [data-organism-header]
     background-color: darken(DARK, 10%)
 
+WIDTH_FOR_MOBILE = 480px
+@media only screen  and (max-width: WIDTH_FOR_MOBILE)
+     , only screen and (max-device-width: WIDTH_FOR_MOBILE) and (orientation: portrait)
+     , only screen and (max-device-height: WIDTH_FOR_MOBILE) and (orientation: landscape)
 
-TRANSLATE = -25%
-@keyframes aside-in
-  0%
-    transform: translateX(TRANSLATE)
-  100%
-    transform: translateX(0)
+  TRANSLATE = -25%
+  @keyframes aside-in
+    0%
+      transform: translateX(TRANSLATE)
+    100%
+      transform: translateX(0)
 
-@keyframes aside-in-right
-  0%
-    transform: translateX(-(TRANSLATE))
-  100%
-    transform: translateX(0)
+  @keyframes aside-in-right
+    0%
+      transform: translateX(-(TRANSLATE))
+    100%
+      transform: translateX(0)
