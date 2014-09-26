@@ -5,6 +5,18 @@
     > abbr
       font-weight: FONT_WEIGHT_NORMAL
 
+  [data-atoms=app] [data-organism-header] > :not(.right):not(.left) &
+    background-color: darken(THEME, 15%)
+    &:not(:last-child)
+      margin-right: 1px
+    &:first-child
+      border-radius: (U / 4) 0  0 (U / 4)
+    &:last-child
+      border-radius: 0 (U / 4) (U / 4) 0
+    &.active
+      background-color: darken(THEME, 30%)
+      color: WHITE
+
   [data-atoms=app] [data-organism-section] &
     color: darken(BUTTON, 50%)
     > abbr
