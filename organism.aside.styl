@@ -3,10 +3,9 @@
     background: DARK
     width: ASIDE_WIDTH
     &.active
-      &[data-state="in"]
-        z-index: 0
-      &[data-state="out"]
-        z-index: -1
+      z-index: 0
+    &:not(.active)
+      z-index: -1
     & [data-organism-header]
       background-color: darken(DARK, 10%)
 
