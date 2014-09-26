@@ -10,7 +10,7 @@
         opacity: 1
       &.back
         opacity: .5
-        transform: scale(.9)
+        transform scale(.9)
 
   &[data-screen=normal]
     > [data-organism-article]
@@ -24,7 +24,7 @@
       vendor(animation-timing-function, ANIMATION_EASE)
 
       &.active
-        transition-property opacity, scale
+        transition-property opacity, transform
         transition-duration (.5 * ANIMATION_DURATION)
         transition-timing-function ANIMATION_EASE
         &.aside
