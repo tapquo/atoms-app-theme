@@ -42,6 +42,7 @@
       color: FORM_COLOR
       font-weight: FONT_WEIGHT_THIN
 
+  /* -- RANGE --------------------------------------------------------------- */
   [data-atom-input][type=range]
     background-color: FORM_COLOR
     border-radius: (BORDER_RADIUS / 2)
@@ -49,13 +50,23 @@
       border-radius: 50%
       background-color: lighten(FORM_COLOR, 95%)
       border: 1px solid FORM_COLOR
-
     &:active
       background-color: THEME !important
       &::-webkit-slider-thumb
         background-color: THEME
         border-color: THEME
 
+  /* -- CHECKBOX ------------------------------------------------------------ */
+  [data-atom-input][type=checkbox]
+    cursor: pointer
+    background-color: FORM_COLOR
+    border-radius: BORDER_RADIUS
+    transition background-color 300ms
+    &:checked
+      background-color: THEME
+      &:after
+        color: WHITE
+
 @media screen and (min-width: 1024px)
-  [data-atoms="app"] input[type=range]:hover
+  [data-atoms=app] input[type=range]:hover
     background-color: THEME !important
