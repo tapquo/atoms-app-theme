@@ -1,5 +1,5 @@
 [data-atoms=app]
-  [data-atom-input]:not([type=range]):not([data-atom-input=autocomplete]), [data-atom-input=autocomplete] > input, [data-atom-select], [data-atom-textarea]
+  [data-atom-input]:not([type=range]):not([type=checkbox]):not([data-atom-input=autocomplete]), [data-atom-input=autocomplete] > input, [data-atom-select], [data-atom-textarea]
     padding-top: (FORM_SIZE / 2)
     padding-bottom: (FORM_SIZE / 2)
     margin-bottom: (FORM_SIZE / 4)
@@ -46,11 +46,19 @@
   [data-atom-input][type=range]
     background-color: FORM_COLOR
     border-radius: (BORDER_RADIUS / 2)
+    box-shadow 0 0 0 4px rgba(0,0,0,0.05)
     &::-webkit-slider-thumb
-      border-radius: 50%
-      background-color: lighten(FORM_COLOR, 95%)
+      border-radius: BORDER_RADIUS
+      background-color: lighten(FORM_COLOR, 90%)
       border: 1px solid FORM_COLOR
-    &:active
+      &::after
+        content: "|||"
+        display: block
+        font-size: FONT_SIZE_TINY !important
+        line-height: 1.5rem
+        text-align: center
+        color: #ccc
+    &:active, &:hover
       background-color: THEME !important
       &::-webkit-slider-thumb
         background-color: THEME
