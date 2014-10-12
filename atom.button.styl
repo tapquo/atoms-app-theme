@@ -27,12 +27,10 @@
       border-radius: BORDER_RADIUS
     &:not([disabled]):not(.transparent)
       transition: opacity 0.25s ease, background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease
-
       PERCENT = 30%
       &:active
         color: WHITE
         background-color: darken(BUTTON, PERCENT)
-        box-shadow inset 0 1px 0 rgba(0,0,0, 0.1)
 
       &.accept
         background-color: ACCEPT
@@ -51,11 +49,7 @@
         &:active
           background-color: darken(THEME, PERCENT)
 
-      &:not(.accept):not(.cancel):not(.warning)
-        box-shadow inset 0 -1px rgba(0,0,0, 0.1)
-
       &.accept, &.cancel, &.warning, &.theme
-        box-shadow inset 0 -1px rgba(0,0,0, 0.2)
         color: WHITE
 
     &[disabled]
