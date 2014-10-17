@@ -6,7 +6,7 @@
       font-weight: FONT_WEIGHT_NORMAL
 
   [data-atoms=app] [data-organism-header] > :not(.right):not(.left) &
-    background-color: darken(THEME, 15%)
+    background-color: darken(THEME, 10%)
     &:not(:last-child)
       margin-right: 1px
     &:first-child
@@ -14,11 +14,11 @@
     &:last-child
       border-radius: 0 (U / 4) (U / 4) 0
     &.active
-      background-color: darken(THEME, 30%)
+      background-color: darken(THEME, 20%)
       color: WHITE
 
   [data-atoms=app] [data-organism-section] &
-    color: darken(BUTTON, 50%)
+    color: WHITE
     > abbr
       font-weight: FONT_WEIGHT_NORMAL
 
@@ -31,7 +31,6 @@
       &:active
         color: WHITE
         background-color: darken(BUTTON, PERCENT)
-
       &.accept
         background-color: ACCEPT
         &:active

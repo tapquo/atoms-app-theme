@@ -56,7 +56,6 @@
     &.warning
       > [data-organism-header]
         background-color: WARNING
-
     &.accept, &.cancel, &.warning
       > [data-organism-header]
         &, [data-atom-button], [data-atom-link]
@@ -74,14 +73,12 @@
       border-radius: 50%
 
   > [data-organism-dialog=push]
-    background-color: THEME
+    background-color: DARK
     color: WHITE
-    > h1
-      box-shadow 0 (-(SHADOW_HEIGHT)) 0 SHADOW_OPACITY
     > section
       background-color: WHITE
       > figure
-        background-color: #ddd
+        background-color: darken(BACKGROUND, 7.5%)
       > p
         color: DARK
 
