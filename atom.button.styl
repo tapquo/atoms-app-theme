@@ -1,5 +1,6 @@
 [data-atom-button]
   cursor: pointer
+  -webkit-font-smoothing: antialiased
 
   [data-atoms=app] [data-organism-header] &
     > abbr
@@ -21,16 +22,17 @@
     color: WHITE
     > abbr
       font-weight: FONT_WEIGHT_NORMAL
-
     &:not(.transparent)
       background-color: BUTTON
       border-radius: BORDER_RADIUS
     &:not([disabled]):not(.transparent)
+      box-shadow: 0 .15rem .3rem 0 rgba(0, 0, 0, 0.15), 0 0 .15rem rgba(0, 0, 0, 0.1)
       transition: opacity 0.25s ease, background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease
       PERCENT = 30%
       &:active
         color: WHITE
         background-color: darken(BUTTON, PERCENT)
+        box-shadow none
       &.accept
         background-color: ACCEPT
         &:active
@@ -47,7 +49,6 @@
         background-color: THEME
         &:active
           background-color: darken(THEME, PERCENT)
-
       &.accept, &.cancel, &.warning, &.theme
         color: WHITE
 
