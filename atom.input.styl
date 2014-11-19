@@ -56,6 +56,8 @@
     background-color: FORM_COLOR
     border-radius: (BORDER_RADIUS / 2)
     box-shadow 0 0 0 4px rgba(0,0,0,0.05)
+    &::-moz-range-thumb
+      background-color: lighten(FORM_COLOR, 90%)
     &::-webkit-slider-thumb
       border-radius: BORDER_RADIUS
       background-color: lighten(FORM_COLOR, 90%)
@@ -69,6 +71,10 @@
         color: #ccc
     &:active, &:hover
       background-color: THEME !important
+      &::-moz-range-thumb
+        background: THEME
+      &::-moz-range-track
+        background: THEME
       &::-webkit-slider-thumb
         background-color: THEME
         border-color: THEME
@@ -78,7 +84,7 @@
     cursor: pointer
     background-color: FORM_COLOR
     border-radius: BORDER_RADIUS
-    transition background-color 300ms
+    transition background ANIMATION_DURATION
     &:checked
       background-color: THEME
       &:after
