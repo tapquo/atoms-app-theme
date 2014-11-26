@@ -26,7 +26,7 @@
       background-color: BUTTON
       border-radius: BORDER_RADIUS
     &:not([disabled]):not(.transparent)
-      box-shadow: 0 .15rem .3rem 0 rgba(0, 0, 0, 0.15), 0 0 .15rem rgba(0, 0, 0, 0.1)
+      box-shadow 0 SHADOW_HEIGHT (U / 2) rgba(0,0,0,0.15)
       transition: opacity 0.25s ease, background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease
       PERCENT = 30%
       &:active
