@@ -8,9 +8,6 @@
       background-color: darken(BACKGROUND, 5%)
       > [data-organism-header] > *
         opacity: 1
-      &.back
-        opacity: .5
-        transform scale(.9)
 
   &[data-screen=normal]
     > [data-organism-article]
@@ -25,13 +22,16 @@
 
       &.active
         transition-property opacity, transform
+        transition-duration (ANIMATION_DURATION / 2)
         transition-timing-function ANIMATION_EASE
         &.aside
           &:not(.right)
             left: ASIDE_WIDTH
           &.right
             right: ASIDE_WIDTH
-
+        &.back
+          opacity: .5
+          transform scale(.9)
         &[data-state="in"]
           z-index: 2
           &:not(.cover)
