@@ -3,9 +3,24 @@
     display: none
   &.active
     &:not(.no-block)
-      background-color: rgba(0,0,0,0.75)
+      // background-color: rgba(0,0,0,0.25)
+      > [data-organism-dialog]
+        &:not(.side), &:not(.no-block)
+          &.show, &.hide
+            vendor(animation-name, dialog-bottom)
+        &.side
+          &:not(.right)
+            &.show, &.hide
+              vendor(animation-name, dialog-left)
+          &.right
+            &.show, &.hide
+              vendor(animation-name, dialog-right)
+
     &.no-block
       transition height (.5 * ANIMATION_DURATION)
+      > [data-organism-dialog]
+        &.show, &.hide
+          vendor(animation-name, dialog-bottom)
 
     > [data-organism-dialog]
       vendor(animation-duration, ANIMATION_DURATION)
@@ -15,24 +30,6 @@
       &.hide
         vendor(animation-direction, reverse)
         vendor(animation-fill-mode, forwards)
-
-      &:not(.side)
-        &.show
-          vendor(animation-name, dialog-show)
-        &.hide
-          vendor(animation-name, dialog-show)
-
-      &.side
-        &:not(.right)
-          &.show
-            vendor(animation-name, dialog-show-side-left)
-          &.hide
-            vendor(animation-name, dialog-show-side-left)
-        &.right
-          &.show
-            vendor(animation-name, dialog-show-side-right)
-          &.hide
-            vendor(animation-name, dialog-show-side-right)
 
     > [data-organism-dialog=loading]
       SPEED = ANIMATION_DURATION * 1.4
@@ -84,32 +81,34 @@
 
 @keyframes dialog-show
   0%
-    transform: translateY(500%)
-  60%
-    transform: translateY(-7%)
-  80%
-    transform: translateY(2%)
+    // opacity: 0
+    transform scale3d(1.1, 1.1, 1)
   100%
+    opacity: 1
+    transform: scale3d(1, 1, 1)
+
+@keyframes dialog-bottom
+  0%
+    // opacity: 0
+    transform: translateY(250%)
+  100%
+    opacity: 1
     transform: translateY(0)
 
-@keyframes dialog-show-side-left
+@keyframes dialog-left
   0%
-    transform: translateX(-500%)
-  60%
-    transform: translateX(7%)
-  80%
-    transform: translateX(-2%)
+    // opacity: 0
+    transform: translateX(-150%)
   100%
+    opacity: 1
     transform: translateX(0)
 
-@keyframes dialog-show-side-right
+@keyframes dialog-right
   0%
-    transform: translateX(500%)
-  60%
-    transform: translateX(-7%)
-  80%
-    transform: translateX(2%)
+    // opacity: 0
+    transform: translateX(150%)
   100%
+    opacity: 1
     transform: translateX(0)
 
 @keyframes dialog-loading
@@ -118,7 +117,7 @@
     transform scale(1)
   50%
     opacity: 0.5
-    transform scale(0.85)
+    transform scale(0.65)
   100%
     opacity: 1
     transform scale(1)
