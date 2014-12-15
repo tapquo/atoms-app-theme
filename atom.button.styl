@@ -1,7 +1,6 @@
 [data-atom-button]
-  cursor: pointer
   -webkit-font-smoothing: antialiased
-
+  font-smoothing: antialiased
   [data-atoms=app] [data-organism-header] &
     > abbr
       font-weight: FONT_WEIGHT_NORMAL
@@ -21,18 +20,16 @@
   [data-atoms=app] [data-organism-section] &
     color: WHITE
     > abbr
-      font-weight: FONT_WEIGHT_NORMAL
+      font-weight: FONT_WEIGHT_BOLD
     &:not(.transparent)
       background-color: BUTTON
       border-radius: BORDER_RADIUS
     &:not([disabled]):not(.transparent)
-      box-shadow 0 SHADOW_HEIGHT (U / 2) rgba(0,0,0,0.15)
-      transition: opacity 0.25s ease, background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease
+      transition: opacity 0.25s ease, background-color 0.25s ease, color 0.25s ease
       PERCENT = 30%
       &:active
         color: WHITE
         background-color: darken(BUTTON, PERCENT)
-        box-shadow none
       &.accept
         background-color: ACCEPT
         &:active
@@ -68,6 +65,7 @@
 
 @media screen and (min-width: 1024px)
   [data-atoms=app] [data-organism-section] [data-atom-button]:not([disabled])
+    cursor: pointer
     PERCENT = 15%
     &:not(.accept):not(.cancel):not(.warning):not(.theme):hover
       background-color: lighten(BUTTON, PERCENT)
