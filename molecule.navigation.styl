@@ -46,7 +46,18 @@
     &.active
       background-color: darken(DARK, 25%)
 
-  > [data-system=dialog] [data-organism-dialog]
+  > [data-system=dialog] > [data-organism-dialog]
+    > [data-molecule-navigation]
+      box-shadow: inset 0 -1px darken(BACKGROUND, 2.5%)
+      > *
+        transition all ANIMATION_DURATION
+        opacity: 0.5
+        > abbr
+          font-weight: FONT_WEIGHT_NORMAL
+        &.active
+          box-shadow: inset 0 -1px FORM_COLOR
+          opacity: 1
+
     > [data-organism-footer] [data-atom-button]
       font-weight: FONT_WEIGHT_NORMAL
       text-transform: uppercase
