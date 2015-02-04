@@ -1,16 +1,20 @@
+html, [data-atoms=app]
+  font-size: FONT_SIZE
+
 [data-atoms=app]
   font-family: FONT_FAMILY
   font-weight: FONT_WEIGHT_THIN
-  font-size: 100%
   background: darken(DARK, 100%)
-
   [data-tooltip]:after
     font-size: FONT_SIZE_TINY
     font-weight: FONT_WEIGHT_LIGHT
     background-color: rgba(0,0,0,.75)
     color: WHITE
     border-radius: BORDER_RADIUS
-
   .loading-animation
     &::before, &::after
       background-color: WHITE
+
+@media screen and (min-device-width: 375px), screen and ( min-resolution: 228dpi), screen and (min-resolution: 3dppx)
+  html, [data-atoms=app]
+    font-size: (FONT_SIZE * 1.1)
