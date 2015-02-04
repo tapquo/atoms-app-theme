@@ -26,9 +26,9 @@
         transition-timing-function ANIMATION_EASE
         &.aside
           &:not(.right)
-            left: ASIDE_WIDTH
+            transform: translateX(ASIDE_WIDTH)
           &.right
-            right: ASIDE_WIDTH
+            transform: translateX(-(ASIDE_WIDTH))
         &.back
           opacity: .35
           filter: gray
@@ -70,13 +70,6 @@
             vendor(animation-name, article-out)
           &.cover
             vendor(animation-name, article-out-cover)
-        &[data-state="aside-show"]
-          vendor(animation-fill-mode, forwards)
-          vendor(animation-name, article-aside)
-        &[data-state="aside-hide"]
-          vendor(animation-direction, reverse)
-          vendor(animation-fill-mode, forwards)
-          vendor(animation-name, article-aside)
         &[data-state="aside-show-right"]
           vendor(animation-fill-mode, forwards)
           vendor(animation-name, article-aside-right)
@@ -86,8 +79,6 @@
           vendor(animation-name, article-aside-right)
 
 TRANSLATE = 100%
-OPACITY   = 1.0
-SCALE     = 0.9
 @keyframes article-in
   0%
     transform: translateX(TRANSLATE)
@@ -99,7 +90,6 @@ SCALE     = 0.9
     transform: translateX(0)
   100%
     transform: translateX(-(TRANSLATE/5))
-    opacity: OPACITY
 
 @keyframes article-in-cover
   0%
@@ -112,16 +102,3 @@ SCALE     = 0.9
     transform: translateY(0)
   100%
     transform: translateY(-(TRANSLATE/10))
-    opacity: OPACITY
-
-@keyframes article-aside
-  0%
-    transform: translateX(0)
-  100%
-    transform: translateX(ASIDE_WIDTH)
-
-@keyframes article-aside-right
-  0%
-    transform: translateX(0)
-  100%
-    transform: translateX(-(ASIDE_WIDTH))
