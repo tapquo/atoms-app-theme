@@ -21,15 +21,10 @@
       vendor(animation-timing-function, ANIMATION_EASE)
 
       &.active
-        transition-property opacity, transform
+        transition-property opacity, filter
         transition-duration ANIMATION_DURATION
         transition-timing-function ANIMATION_EASE
-        &.aside
-          &:not(.right)
-            transform: translateX(ASIDE_WIDTH)
-          &.right
-            transform: translateX(-(ASIDE_WIDTH))
-        &.back
+        &.aside, &.back
           opacity: .35
           filter: gray
           -webkit-filter: grayscale(100%)
@@ -37,6 +32,7 @@
           -ms-filter: grayscale(100%)
           -o-filter: grayscale(100%)
           filter: grayscale(100%)
+        &.back
           transform scale(.95)
         &[data-state="in"]
           z-index: 2

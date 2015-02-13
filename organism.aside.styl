@@ -1,9 +1,10 @@
 [data-atoms=app]
   > [data-organism-aside]
-    background: DARK
     width: ASIDE_WIDTH
+    max-width: MAX_ASIDE_WIDTH
+    background: DARK
     &.active
-      z-index: 0
+      z-index: 2
     &:not(.active)
       z-index: -1
     & [data-organism-header]
@@ -26,7 +27,7 @@
         vendor(animation-direction, reverse)
         vendor(animation-fill-mode, forwards)
 
-TRANSLATE = -25%
+TRANSLATE = -100%
 @keyframes aside-in
   0%
     transform: translateX(TRANSLATE)
